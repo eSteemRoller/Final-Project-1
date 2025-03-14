@@ -12,8 +12,7 @@
     }
 
     body {
-        max-width: 100vw;
-        overflow-x: hidden;
+        width: 100%;
     }
 
     section {
@@ -84,7 +83,6 @@
     .row {
         width: 100%;
         max-width: 1200px;
-        padding: 0 16px;
         margin: 0 auto;
     }
 
@@ -211,7 +209,9 @@ NAVIGATION BAR
         opacity: 1;
     }
 
-    .nav__link--sign-up:hover {
+    .nav__link--sign-up:hover,
+    .header__email--btn:hover,
+    .learn-more__btn:hover {
         background-color: rgba(80, 17, 204);
     }
 
@@ -1023,6 +1023,10 @@ GET STARTED
         transition: all 300ms;
     }
 
+    .start-box__button:nth-child(1):hover {
+        background: #e53e3e;
+    }
+
     .start-box__button {
         padding: 20px 40px;
         border-radius: 500px;
@@ -1038,6 +1042,10 @@ GET STARTED
     .start-box__button:nth-child(2) {
         border: 1px solid rgb(160, 174, 192);
         transition: all 300ms;
+    }
+
+    .start-box__button:nth-child(2):hover {
+        background-color: rgba(80, 17, 204);
     }
 
 /*
@@ -1166,7 +1174,6 @@ FOOTER
     .footer__socials {
         display: flex;
         align-items: center;
-        margin-left: -16px;
     }
 
     .footer__social--link {
@@ -1194,11 +1201,12 @@ MOBILE ADAPTATIONS
 */
 
     .mobile__menu {
+        height: 100vh;
         position: fixed;
         top: 0px;
         left: 0px;
         right: 0px;
-        height: 378px;
+        /* height: 378px; */
         background-color: rgb(255, 255, 255);
         z-index: 4;
         visibility: hidden;
@@ -1242,18 +1250,20 @@ MOBILE ADAPTATIONS
         padding-bottom: 4px;
         margin: 8px 0px;
         border-bottom: 2px solid transparent;
-        transition: all 300ms;
     }
 
     .mobile__link--primary {
-        color: rgb(247, 250, 252);
+        color: #f7fafc;
         padding: 12px 32px;
-        background: rgb(100, 21, 255);
+        background: #6415ff;
         border-radius: 500px;
-        border-width: initial;
-        border-style: none;
-        border-color: initial;
-        border-image: initial;
+        border: none;
+    }
+
+    @media(max-width: 1300px) {
+        .header__email--input {
+            padding-left: 16px;
+        }
     }
 
     @media(max-width: 1200px) {
@@ -1263,8 +1273,7 @@ MOBILE ADAPTATIONS
         }
         .header__email--input {
             position: static;
-            padding: 16px 0;
-            padding-left: 32px;
+            padding: 16px;
             line-height: 1.5;
         }
         .header__email--btn {
@@ -1280,7 +1289,7 @@ MOBILE ADAPTATIONS
         }
     }
 
-    @media(max-width: 1024px) {
+    @media(max-width: 1080px) {
         .header__container {
             padding: 32px 0;
         }
@@ -1446,5 +1455,21 @@ MOBILE ADAPTATIONS
         }
         .testimonial__buttons {
             justify-content: center;
+        }
+        .start-box__row {
+            justify-content: space-between;
+            padding-right: 48px;
+        }
+        .start-box__button {
+            padding: 10px 20px;
+        }
+        .feature__title {
+            font-size: 20px;
+        }
+        .feature__para {
+            font-size: 16px;
+        }
+        .plan__button {
+            padding: 0;
         }
     }
